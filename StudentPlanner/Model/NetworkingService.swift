@@ -23,7 +23,7 @@ class NetworkingService {
     }
     
     func saveUserInfo(user: User!, username:String, password:String,school:String) {
-        let userInfo = ["email:": user.email, "username":username, "password":password,"school": school, "uid": user.uid, ]
+        let userInfo = ["email": user.email, "username":username, "password":password,"school": school, "uid": user.uid, ]
      
         let userRef = databaseRef.child("users").child(user.uid)
         
@@ -76,7 +76,6 @@ class NetworkingService {
                     if error == nil {
                         
                         self.saveUserInfo(user: user, username: username, password: password, school: school)
-                        print(Auth.auth().currentUser?.displayName!)
                         
                     }else{
                         print(error!.localizedDescription)
@@ -103,46 +102,47 @@ class NetworkingService {
         }
     }
 
-    
-    /**
-     - Returns:
-     Boolean true if school exists, false if not
-     */
-    func checkSchool(schoolName:String){
-        // If school doesn't exist, add it to db
-        let schoolRef = Database.database().reference().child("Schools")
-        schoolRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if snapshot.hasChild(schoolName){
-                print(snapshot.children)
-                print("true rooms exist")
-            }else{
-                print(snapshot.children)
-                print("false room doesn't exist")
-                schoolRef.childByAutoId().setValue(["Name": schoolName as AnyObject])
-            }
-        })
+    func setUserInfoIntoSchool(user: User!, username: String, password: String, school: String, data: NSData!){
+        
     }
  
     func signUp(email: String, username: String, password: String, school: String, data: NSData!){
-        checkSchool(schoolName: school)
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            
+        
+        print("creating user")
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error == nil {
                 
-                self.setUserInfo(user: user, username: username, password: password, school: school, data: data)
-                print("info set")
-                
-            }else {
+                let schoolRef = globalRef.child("Schools")
+                schoolRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild(school) {
+                        // Add the student into the school
+                        self.setUserInfoIntoSchool(user: user, username: username, password: password, school: school, data: data)
+                        print("Snapshot Children: \(snapshot.children)")
+                    } else{
+                        // No school exists, create a new one and add student to it
+                        schoolRef.child(school).childByAutoId().setValue(school)
+                        
+                        print("Snapshot Children 2 : \(snapshot.children)")
+                        self.setUserInfo(user: user, username: username, password: password, school: school, data: data)
+                    }
+                })
+            
+            } else {
+                print(error?.localizedDescription)
                 let alert = UIAlertController(title: "Error signing up", message: error?.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
                     NSLog("The \"OK\" alert occured.")
-//                    alert.dismiss(animated: true, completion: nil)
+                    //                    alert.dismiss(animated: true, completion: nil)
                 }))
             }
-        })
-        
-        
+        }
     }
+    
+    
+    
+    
+    
     
     func addAssignment(title: String, description: String, class:String){
         

@@ -12,6 +12,7 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
 
 
     @IBOutlet weak var userImageView: UIImageView!
+    // TODO: complete email endings with SearchTextField
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var reEnterPasswordField: UITextField!
@@ -84,15 +85,5 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {}
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

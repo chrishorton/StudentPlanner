@@ -10,14 +10,25 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import SwiftyChrono
 
 class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    @IBOutlet weak var assignmentTitle: UITextField!
-    @IBOutlet weak var assignmentDescription: UITextField!
+    @IBOutlet weak var assignmentName: UITextField!
+    @IBOutlet weak var assignmentDueDate: UITextField!
     @IBOutlet weak var classPicker: UIPickerView!
+    
     var databaseRef = Database.database().reference().child("users")
     var pickerData = [String]()
+    
+
+    func processDate() -> String{
+        let chrono = Chrono()
+        let date = chrono.parseDate(text: assignmentDueDate.text!)
+        let newdate = date?.toString(dateFormat: "yyyy-MM-dd HH:mm:ss")
+        return newdate!
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +36,20 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
         self.classPicker.delegate = self
         self.classPicker.dataSource = self
         
-        let classRef = databaseRef.child((Auth.auth().currentUser?.uid)!).child("classes")
+        
+        // Add users classes to picker
+        let classRef = databaseRef.child((Auth.auth().currentUser?.uid)!).child("classIDs")
         classRef.observe(.value) { (snapshot) in
-            var items = [StudentClass]()
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                self.pickerData.append(rest.key)
+            }
         }
+    }
+    
+    func handlePickerData() -> String {
+        let row = classPicker.selectedRow(inComponent: 0)
+        return pickerData[row]
     }
     
     @IBAction func addAction(_ sender: Any) {
@@ -36,7 +57,8 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
         let assignmentRef = databaseRef.child("allAssignments").childByAutoId()
         let currentUser =  Auth.auth().currentUser?.displayName
         print(currentUser!)
-        let assignment = Assignment(title: assignmentTitle.text!, className: assignmentDescription.text!, dueDate: currentUser!)
+        
+        let assignment = Assignment(title: assignmentName.text!, className: handlePickerData(), dueDate: processDate())
         
         assignmentRef.setValue(assignment.toAnyObject())
         print("Added")

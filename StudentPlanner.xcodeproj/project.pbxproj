@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8202930CAEEC01A735A3545D /* Pods_StudentPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAD29F0957EBDEBD41BD66D /* Pods_StudentPlanner.framework */; };
+		831458ED2008A645009E9F76 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831458EC2008A645009E9F76 /* DateExtension.swift */; };
 		8343C8DD1FF85B9400B458DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8DC1FF85B9400B458DF /* AppDelegate.swift */; };
 		8343C8E21FF85B9400B458DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8343C8E01FF85B9400B458DF /* Main.storyboard */; };
 		8343C8E41FF85B9400B458DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8343C8E31FF85B9400B458DF /* Assets.xcassets */; };
@@ -19,9 +20,12 @@
 		8343C8FA1FF85E7200B458DF /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8F91FF85E7200B458DF /* ListTableViewController.swift */; };
 		8343C8FC1FF85E8800B458DF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8FB1FF85E8800B458DF /* AddViewController.swift */; };
 		8343C9011FF8A23D00B458DF /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C9001FF8A23D00B458DF /* NetworkingService.swift */; };
+		836B9CBD20072F2E001F3B8F /* JoinClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B9CBC20072F2E001F3B8F /* JoinClassViewController.swift */; };
 		839DDA93200487D400A38E7D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA92200487D400A38E7D /* SettingsTableViewController.swift */; };
 		839DDA952004A32200A38E7D /* ResetPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA942004A32200A38E7D /* ResetPasswordTableViewController.swift */; };
 		839DDA972004ABB200A38E7D /* ListClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA962004ABB200A38E7D /* ListClassesTableViewController.swift */; };
+		839DDA9920055FD300A38E7D /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9820055FD300A38E7D /* AddClassViewController.swift */; };
+		839DDA9B2005649100A38E7D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9A2005649100A38E7D /* Globals.swift */; };
 		83A6322B1FFC19A90065552F /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A6322A1FFC19A90065552F /* profile.png */; };
 		83A6322D1FFC467B0065552F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322C1FFC467B0065552F /* User.swift */; };
 		83A6322F1FFC47CA0065552F /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322E1FFC47CA0065552F /* Assignment.swift */; };
@@ -32,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831458EC2008A645009E9F76 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		8343C8D91FF85B9400B458DF /* StudentPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8343C8DC1FF85B9400B458DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8343C8E11FF85B9400B458DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,9 +50,12 @@
 		8343C8F91FF85E7200B458DF /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		8343C8FB1FF85E8800B458DF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		8343C9001FF8A23D00B458DF /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		836B9CBC20072F2E001F3B8F /* JoinClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassViewController.swift; sourceTree = "<group>"; };
 		839DDA92200487D400A38E7D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "StudentPlanner/View Controllers/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		839DDA942004A32200A38E7D /* ResetPasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordTableViewController.swift; sourceTree = "<group>"; };
 		839DDA962004ABB200A38E7D /* ListClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListClassesTableViewController.swift; sourceTree = "<group>"; };
+		839DDA9820055FD300A38E7D /* AddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
+		839DDA9A2005649100A38E7D /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		83A6322A1FFC19A90065552F /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = StudentPlanner/profile.png; sourceTree = SOURCE_ROOT; };
 		83A6322C1FFC467B0065552F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83A6322E1FFC47CA0065552F /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
@@ -125,7 +133,9 @@
 		8343C8FD1FF85E9600B458DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				836B9CBC20072F2E001F3B8F /* JoinClassViewController.swift */,
 				839DDA962004ABB200A38E7D /* ListClassesTableViewController.swift */,
+				839DDA9820055FD300A38E7D /* AddClassViewController.swift */,
 				839DDA942004A32200A38E7D /* ResetPasswordTableViewController.swift */,
 				839DDA92200487D400A38E7D /* SettingsTableViewController.swift */,
 				8343C8DC1FF85B9400B458DF /* AppDelegate.swift */,
@@ -142,11 +152,13 @@
 		8343C9021FF8A24800B458DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				839DDA9A2005649100A38E7D /* Globals.swift */,
 				8343C9001FF8A23D00B458DF /* NetworkingService.swift */,
 				83A6322C1FFC467B0065552F /* User.swift */,
 				83A6322E1FFC47CA0065552F /* Assignment.swift */,
 				83CA25212003E08200DC23A1 /* Helpers.swift */,
 				83CA2527200421BB00DC23A1 /* StudentClass.swift */,
+				831458EC2008A645009E9F76 /* DateExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +289,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework",
 				"${BUILT_PRODUCTS_DIR}/TKSubmitTransition/TKSubmitTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -286,6 +299,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyChrono.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TKSubmitTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -306,7 +320,11 @@
 				839DDA93200487D400A38E7D /* SettingsTableViewController.swift in Sources */,
 				8343C8F21FF85E0600B458DF /* LoginViewController.swift in Sources */,
 				83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */,
+				839DDA9B2005649100A38E7D /* Globals.swift in Sources */,
+				831458ED2008A645009E9F76 /* DateExtension.swift in Sources */,
+				836B9CBD20072F2E001F3B8F /* JoinClassViewController.swift in Sources */,
 				839DDA972004ABB200A38E7D /* ListClassesTableViewController.swift in Sources */,
+				839DDA9920055FD300A38E7D /* AddClassViewController.swift in Sources */,
 				839DDA952004A32200A38E7D /* ResetPasswordTableViewController.swift in Sources */,
 				8343C8DD1FF85B9400B458DF /* AppDelegate.swift in Sources */,
 				83CA25222003E08200DC23A1 /* Helpers.swift in Sources */,

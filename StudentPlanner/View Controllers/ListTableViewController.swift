@@ -20,24 +20,18 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        // If nothing to do, meme them
         print(assignmentArray)
-
+        print("View did load")
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
+        print("Viewwillappear")
         if ((Auth.auth().currentUser) == nil){
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
             self.present(vc, animated: true, completion: nil)
         }
-        
+
         databaseRef = Database.database().reference().child("allAssignments")
         
         databaseRef.observe(.value, with: { (snapshot) in
@@ -50,13 +44,16 @@ class ListTableViewController: UITableViewController {
                 newItems.insert(newAssignment, at: 0)
                 
             }
+
             self.assignmentArray = newItems
+            
+            self.tableView.reloadData()
+            
             if self.assignmentArray.count == 0 {
                 let image = UIImageView(frame: CGRect(origin: CGPoint(x: 0,y:0), size: CGSize(width: 200, height:200)))
                 image.image = UIImage(named: "nothing_to_do.png")
                 self.view.addSubview(image)
             }
-            self.tableView.reloadData()
             
         }) { (error) in
             print(error.localizedDescription)
@@ -69,7 +66,11 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let ref = assignmentArray[indexPath.row].ref
+            ref!.removeValue()
+            assignmentArray.remove(at: indexPath.row)
             
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
