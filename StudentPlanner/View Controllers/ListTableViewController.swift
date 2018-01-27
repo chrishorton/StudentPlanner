@@ -17,6 +17,7 @@ class ListTableViewController: UITableViewController {
     var assignmentArray = [Assignment]()
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
+    var valueToPass: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,19 @@ class ListTableViewController: UITableViewController {
         print("View did load")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let viewController = segue.destination as! AssignmentDetailViewController
+            viewController.assignment = sender as? Assignment
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let assignment = assignmentArray[indexPath.row]
+        performSegue(withIdentifier: "showDetail", sender: assignment)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("Viewwillappear")
         if ((Auth.auth().currentUser) == nil){
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
             self.present(vc, animated: true, completion: nil)
@@ -40,7 +51,7 @@ class ListTableViewController: UITableViewController {
             
             for item in snapshot.children {
                 
-                let newAssignment = Assignment(snapshot: item as! DataSnapshot)
+                let newAssignment = Assignment(snapshot: (item as? DataSnapshot)!, withDesc: false)
                 newItems.insert(newAssignment, at: 0)
                 
             }
