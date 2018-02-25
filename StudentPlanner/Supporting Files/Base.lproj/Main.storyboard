@@ -508,6 +508,9 @@
                                                     <state key="normal" title="Take A Picture">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="takePictureDetail:" destination="Xur-Mc-egu" eventType="touchUpInside" id="Tyr-7R-15l"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

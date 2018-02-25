@@ -35,6 +35,7 @@
 		83CA25242003E6EB00DC23A1 /* nothing_to_do.png in Resources */ = {isa = PBXBuildFile; fileRef = 83CA25232003E6EB00DC23A1 /* nothing_to_do.png */; };
 		83CA25262003F7CA00DC23A1 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */; };
 		83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA2527200421BB00DC23A1 /* StudentClass.swift */; };
+		83D91D4B2043335400B0670D /* FirebaseHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D91D4A2043335400B0670D /* FirebaseHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		83CA25232003E6EB00DC23A1 /* nothing_to_do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nothing_to_do.png; path = StudentPlanner/nothing_to_do.png; sourceTree = SOURCE_ROOT; };
 		83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		83CA2527200421BB00DC23A1 /* StudentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
+		83D91D4A2043335400B0670D /* FirebaseHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelpers.swift; sourceTree = "<group>"; };
 		84C939D2304091ABAB4D338E /* Pods-StudentPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudentPlanner/Pods-StudentPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		92C466C611EA9BDDC87ACDCE /* Pods-StudentPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudentPlanner/Pods-StudentPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		EBAD29F0957EBDEBD41BD66D /* Pods_StudentPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				8343C9021FF8A24800B458DF /* Model */,
-				8343C8E81FF85B9400B458DF /* Info.plist */,
 				8343C8FD1FF85E9600B458DF /* View Controllers */,
 				8343C8F01FF85DF400B458DF /* Supporting Files */,
 			);
@@ -124,6 +125,10 @@
 		8343C8F01FF85DF400B458DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				831458EC2008A645009E9F76 /* DateExtension.swift */,
+				83CA25212003E08200DC23A1 /* Helpers.swift */,
+				8343C9001FF8A23D00B458DF /* NetworkingService.swift */,
+				8343C8E81FF85B9400B458DF /* Info.plist */,
 				83961AD920426587008C3B4F /* ClassTableViewCell.xib */,
 				83CA25232003E6EB00DC23A1 /* nothing_to_do.png */,
 				83A6322A1FFC19A90065552F /* profile.png */,
@@ -131,6 +136,7 @@
 				8343C8E31FF85B9400B458DF /* Assets.xcassets */,
 				8343C8E51FF85B9400B458DF /* LaunchScreen.storyboard */,
 				8343C8EE1FF85C1A00B458DF /* GoogleService-Info.plist */,
+				83D91D4A2043335400B0670D /* FirebaseHelpers.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -159,12 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				839DDA9A2005649100A38E7D /* Globals.swift */,
-				8343C9001FF8A23D00B458DF /* NetworkingService.swift */,
 				83A6322C1FFC467B0065552F /* User.swift */,
 				83A6322E1FFC47CA0065552F /* Assignment.swift */,
-				83CA25212003E08200DC23A1 /* Helpers.swift */,
 				83CA2527200421BB00DC23A1 /* StudentClass.swift */,
-				831458EC2008A645009E9F76 /* DateExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				839DDA972004ABB200A38E7D /* ListClassesTableViewController.swift in Sources */,
 				83961ADA20426587008C3B4F /* ClassTableViewCell.swift in Sources */,
 				839DDA9920055FD300A38E7D /* AddClassViewController.swift in Sources */,
+				83D91D4B2043335400B0670D /* FirebaseHelpers.swift in Sources */,
 				834F40302019AC0B008FD332 /* AssignmentDetailViewController.swift in Sources */,
 				8343C8DD1FF85B9400B458DF /* AppDelegate.swift in Sources */,
 				83CA25222003E08200DC23A1 /* Helpers.swift in Sources */,

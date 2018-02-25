@@ -60,6 +60,23 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
 
     }
     
+    @IBAction func takePictureDetail(_ sender: Any) {
+        // For now take a picture and add it to detail view - this could be a pic of the assignment worksheet for now - or in the future a picture of the assignment written, in order to process the text
+        
+        // TODO: install pod Lightbox and ImagePicker
+        let config = Configuration()
+        config.doneButtonTitle = "Finish"
+        config.noImagesTitle = "Sorry! There are no images here!"
+        config.recordLocation = false
+        config.allowVideoSelection = true
+        
+        let imagePicker = ImagePickerController(configuration: config)
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
     func handlePickerData() -> String {
         let row = classPicker.selectedRow(inComponent: 0)
         print("Picker data selected: \(pickerData[row])")
@@ -96,6 +113,20 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        
+        let lightboxImages = images.map {
+            return LightboxImage(image: $0)
+        }
+        
+        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+        imagePicker.present(lightbox, animated: true, completion: nil)``
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
     
 
 }
