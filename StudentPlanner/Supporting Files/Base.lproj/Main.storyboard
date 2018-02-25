@@ -784,10 +784,10 @@
             </objects>
             <point key="canvasLocation" x="374" y="2291"/>
         </scene>
-        <!--List Classes Table View Controller-->
+        <!--Your Classes-->
         <scene sceneID="Cdl-Xj-K3D">
             <objects>
-                <tableViewController id="ftk-nd-bsg" customClass="ListClassesTableViewController" customModule="StudentPlanner" sceneMemberID="viewController">
+                <tableViewController title="Your Classes" id="ftk-nd-bsg" customClass="ListClassesTableViewController" customModule="StudentPlanner" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJS-Pm-DOp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -817,7 +817,7 @@
                             <outlet property="delegate" destination="ftk-nd-bsg" id="MYr-YC-cYc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VDg-Pm-G2t">
+                    <navigationItem key="navigationItem" title="Your Classes" id="VDg-Pm-G2t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="arm-SJ-joQ">
                             <connections>
                                 <segue destination="zxY-1w-2BG" kind="show" id="4hg-XC-b47"/>

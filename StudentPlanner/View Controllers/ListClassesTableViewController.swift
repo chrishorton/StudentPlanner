@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ListClassesTableViewController: UITableViewController {
 
+    var classes = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Fetch classes
+        let ref = userRef.child("classIDs")
+        ref.observe(.value, with: { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                self.classes.append(key)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,4 +36,10 @@ class ListClassesTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ClassTableViewCell()
+        cell.className.text = classes[indexPath.row]
+        return cell
+    }
+    
 }
