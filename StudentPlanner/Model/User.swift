@@ -23,7 +23,6 @@ struct UserStruct {
     init(snapshot: DataSnapshot){
         
         key = snapshot.key
-        
         username = (snapshot.value as? NSDictionary)?["username"] as? String ?? ""
         email = (snapshot.value as? NSDictionary)?["email"] as? String ?? ""
         photoUrl = (snapshot.value as? NSDictionary)?["photoUrl"] as? String ?? ""

@@ -16,6 +16,8 @@ struct StudentClass {
     var assignments = [String]()
     var name: String = ""
     var professor: String = ""
+    var time: String = ""
+    var UID: String = ""
     
     
     init(name: String, students: [String], assignments: [String]) {
@@ -23,10 +25,14 @@ struct StudentClass {
         self.assignments = assignments
     }
     
+    init(name:String, key:String) {
+        self.name = name
+    }
+    
     init(snapshot: DataSnapshot) {
-//        students = ((snapshot.value as? NSDictionary)?["students"] as? [String])!
-//        assignments = ((snapshot.value as? NSDictionary)?["assignmentUIDs"] as? [String])!
-        name = ((snapshot.value as? NSDictionary)?["name"] as? String)!
-        professor = ((snapshot.value as? NSDictionary)?["professor"] as? String)!
+        self.name = ((snapshot.value as? NSDictionary)?["name"] as? String)!
+        self.professor = ((snapshot.value as? NSDictionary)?["professor"] as? String)!
+        self.time = ((snapshot.value as? NSDictionary)?["timeOrPeriod"] as? String)!
+        self.UID = ((snapshot.value as? NSDictionary)?["UID"] as? String)!
     }
 }
