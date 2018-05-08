@@ -29,11 +29,9 @@
 		839DDA93200487D400A38E7D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA92200487D400A38E7D /* SettingsTableViewController.swift */; };
 		839DDA9920055FD300A38E7D /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9820055FD300A38E7D /* AddClassViewController.swift */; };
 		839DDA9B2005649100A38E7D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9A2005649100A38E7D /* Globals.swift */; };
-		83A6322B1FFC19A90065552F /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A6322A1FFC19A90065552F /* profile.png */; };
 		83A6322D1FFC467B0065552F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322C1FFC467B0065552F /* User.swift */; };
 		83A6322F1FFC47CA0065552F /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322E1FFC47CA0065552F /* Assignment.swift */; };
 		83CA25222003E08200DC23A1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA25212003E08200DC23A1 /* Helpers.swift */; };
-		83CA25242003E6EB00DC23A1 /* nothing_to_do.png in Resources */ = {isa = PBXBuildFile; fileRef = 83CA25232003E6EB00DC23A1 /* nothing_to_do.png */; };
 		83CA25262003F7CA00DC23A1 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */; };
 		83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA2527200421BB00DC23A1 /* StudentClass.swift */; };
 		83EA832D208EFBE40019FA27 /* AllClassesForSchoolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EA832C208EFBE40019FA27 /* AllClassesForSchoolTableViewController.swift */; };
@@ -63,11 +61,9 @@
 		839DDA92200487D400A38E7D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "StudentPlanner/View Controllers/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		839DDA9820055FD300A38E7D /* AddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		839DDA9A2005649100A38E7D /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		83A6322A1FFC19A90065552F /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = StudentPlanner/profile.png; sourceTree = SOURCE_ROOT; };
 		83A6322C1FFC467B0065552F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83A6322E1FFC47CA0065552F /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		83CA25212003E08200DC23A1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		83CA25232003E6EB00DC23A1 /* nothing_to_do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nothing_to_do.png; path = StudentPlanner/nothing_to_do.png; sourceTree = SOURCE_ROOT; };
 		83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		83CA2527200421BB00DC23A1 /* StudentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
 		83EA832C208EFBE40019FA27 /* AllClassesForSchoolTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClassesForSchoolTableViewController.swift; sourceTree = "<group>"; };
@@ -146,8 +142,6 @@
 				831458EC2008A645009E9F76 /* DateExtension.swift */,
 				83CA25212003E08200DC23A1 /* Helpers.swift */,
 				8343C9001FF8A23D00B458DF /* NetworkingService.swift */,
-				83CA25232003E6EB00DC23A1 /* nothing_to_do.png */,
-				83A6322A1FFC19A90065552F /* profile.png */,
 				8343C8E01FF85B9400B458DF /* Main.storyboard */,
 				8343C8E31FF85B9400B458DF /* Assets.xcassets */,
 				8343C8E51FF85B9400B458DF /* LaunchScreen.storyboard */,
@@ -258,9 +252,7 @@
 				8343C8E71FF85B9400B458DF /* LaunchScreen.storyboard in Resources */,
 				8343C8E41FF85B9400B458DF /* Assets.xcassets in Resources */,
 				8343C8EF1FF85C1A00B458DF /* GoogleService-Info.plist in Resources */,
-				83A6322B1FFC19A90065552F /* profile.png in Resources */,
 				8343C8E21FF85B9400B458DF /* Main.storyboard in Resources */,
-				83CA25242003E6EB00DC23A1 /* nothing_to_do.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
