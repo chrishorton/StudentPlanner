@@ -12,31 +12,59 @@ import FirebaseAuth
 
 class ListClassesTableViewController: UITableViewController {
 
+    @IBOutlet weak var segControl: UISegmentedControl!
+    
     var classes = [StudentClass]()
     let ref = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("classIDs")
 
-    func setObserver(){
-        ref.observe(.value, with: { (snapshot) in
-            var tempClasses = [StudentClass]()
-            if snapshot.exists() {
-                for individual_class in snapshot.children {
-                    let student_class_snap = individual_class as? DataSnapshot
-                    let student_class = StudentClass(snapshot: student_class_snap!)
-                    tempClasses.append(student_class)
+    @IBAction func indexChanged(_ sender: Any) {
+        setUpTableView()
+    }
+    
+    func setObserver(for ID: String){
+        if (ID == "userClasses") {
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                var tempClasses = [StudentClass]()
+                if snapshot.exists() {
+                    for individual_class in snapshot.children {
+                        let student_class_snap = individual_class as? DataSnapshot
+                        let student_class = StudentClass(snapshot: student_class_snap!)
+                        tempClasses.append(student_class)
+                    }
+                    self.classes = tempClasses.reversed()
+                    print(self.classes)
+                    self.tableView.reloadData()
+                } else {
+                    print("nothing done, snap was nil")
                 }
-                self.classes = tempClasses.reversed()
-                print(self.classes)
-                self.tableView.reloadData()
-            } else {
-                print("nothing done, snap was nil")
+            })
+        } else{
+            print("Fetching")
+            print(classes)
+            ref.observeSingleEvent(of: .value) { (snapshot) in
+                for child in snapshot.children {
+                    let childSnap = child as! DataSnapshot
+                    let student_class = StudentClass(snapshot: childSnap)
+                    self.classes.append(student_class)
+                }
             }
-        })
+        }
+        
+    }
+    
+    func setUpTableView(){
+        self.classes.removeAll()
+        if segControl.selectedSegmentIndex == 0{
+            setObserver(for: "userClasses")
+        } else {
+            setObserver(for: "allClasses")
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "JoinClassCell", bundle: nil), forCellReuseIdentifier: "joinClassCell")
-        setObserver()
+        setUpTableView()
     }
     
     // MARK: - Table view data source
