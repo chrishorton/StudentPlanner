@@ -16,14 +16,15 @@ class AddClassViewController: UIViewController {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var nameField: SearchTextField!
     @IBOutlet weak var teacherField: SearchTextField!
+    @IBOutlet weak var dayField: UITextField!
     
     var ref = Database.database().reference()
     var classNames = [String]()
     var teacherNames = [String]()
     var user:UserStruct?
     
-    let userRef = globalRef.child("users").child(Auth.auth().currentUser!.uid).child("classIDs").childByAutoId()
-    let classRef = globalRef.child("Classes").childByAutoId()
+    var userRef = globalRef.child("users").child(Auth.auth().currentUser!.uid).child("classIDs")
+    var classRef = globalRef.child("Classes")
     
     
 //    func getCurrentUserInfo() -> UserStruct {
@@ -42,21 +43,17 @@ class AddClassViewController: UIViewController {
     
     func setData(){
         let schoolRef = globalRef.child("Schools").child(self.school)
+        classRef = classRef.childByAutoId()
         let key = classRef.key
-        
-        classRef.child("name").setValue(self.nameField.text)
-        classRef.child("professor").setValue(self.teacherField.text)
-        classRef.child("UID").setValue(key)
-        classRef.child("timeOrPeriod").setValue(self.timeField.text)
-        
-        userRef.child("name").setValue(self.nameField.text)
-        userRef.child("professor").setValue(self.teacherField.text)
-        userRef.child("UID").setValue(key)
-        userRef.child("timeOrPeriod").setValue(self.timeField.text)
-        
+        userRef = userRef.child(key)
+
+        let student_class = StudentClass(name: self.nameField.text!, professor: self.teacherField.text!, UID: key, timeOrPeriod: timeField.text!, dayOfWeek: dayField.text!)
+        let any_student_class = student_class.toAnyObject()
+        classRef.setValue(any_student_class)
+        userRef.setValue(any_student_class)
         ref.child("Teachers").child(self.teacherField.text!).child("classes").child(self.nameField.text!).setValue(self.nameField.text!)
         
-        let newRef = schoolRef.child("classes").childByAutoId()
+        let newRef = schoolRef.child("classes").child(key)
         newRef.child("UID").setValue(key)
         newRef.child("name").setValue(self.nameField.text)
         newRef.child("professor").setValue(self.teacherField.text)

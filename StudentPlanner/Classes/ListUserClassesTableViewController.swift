@@ -10,12 +10,12 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class ListClassesTableViewController: UITableViewController {
+class ListClassesTableViewController: UITableViewController, CellDelegate {
 
     @IBOutlet weak var segControl: UISegmentedControl!
     
     var classes = [StudentClass]()
-    let ref = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("classIDs")
+    let ref = userRef.child("classIDs")
 
     @IBAction func indexChanged(_ sender: Any) {
         setUpTableView()
@@ -39,14 +39,16 @@ class ListClassesTableViewController: UITableViewController {
                 }
             })
         } else{
-            print("Fetching")
-            print(classes)
             ref.observeSingleEvent(of: .value) { (snapshot) in
+                var temp = [StudentClass]()
                 for child in snapshot.children {
                     let childSnap = child as! DataSnapshot
                     let student_class = StudentClass(snapshot: childSnap)
-                    self.classes.append(student_class)
+                    temp.append(student_class)
                 }
+                self.classes = temp
+                print(self.classes)
+                self.tableView.reloadData()
             }
         }
         
@@ -72,16 +74,40 @@ class ListClassesTableViewController: UITableViewController {
         return self.classes.count
     }
 
+    func didTap(_ cell: JoinTableViewCell){
+        let indexPath = self.tableView.indexPath(for: cell)
+        userRef.child("classIDs").observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.hasChild(self.classes[indexPath!.row].UID) {
+                print(snapshot.children)
+                let alert = UIAlertController(title: "My Alert", message: "Oops, you've already joined this class!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+                    NSLog("The ok alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let _class = self.classes[(indexPath?.row)!].toAnyObject()
+                userRef.child("classIDs").child(self.classes[indexPath!.row].UID).setValue(_class)
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "joinClassCell", for: indexPath) as! JoinTableViewCell
+        cell.delegate = self
         cell.className.text = self.classes[indexPath.row].name
         cell.instructorName.text = self.classes[indexPath.row].professor
         cell.periodOrTime.text = self.classes[indexPath.row].time
+        cell.dayLabel.text = self.classes[indexPath.row].day
+        if segControl.selectedSegmentIndex == 0 {
+            cell.joinButton.setTitle("", for: .normal)
+        } else {
+            cell.joinButton.setTitle("Join this Class", for: .normal)
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 135
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,4 +124,8 @@ class ListClassesTableViewController: UITableViewController {
     }
     
     
+}
+
+protocol CellDelegate: class {
+    func didTap(_ cell: JoinTableViewCell)
 }

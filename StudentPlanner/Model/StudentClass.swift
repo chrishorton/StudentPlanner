@@ -18,6 +18,7 @@ struct StudentClass {
     var professor: String = ""
     var time: String = ""
     var UID: String = ""
+    var day: String = ""
     
     
     init(name: String, students: [String], assignments: [String]) {
@@ -29,10 +30,23 @@ struct StudentClass {
         self.name = name
     }
     
+    init(name: String, professor: String, UID: String, timeOrPeriod: String, dayOfWeek: String) {
+        self.name = name
+        self.professor = professor
+        self.UID = UID
+        self.time = timeOrPeriod
+        self.day = dayOfWeek
+    }
+    
     init(snapshot: DataSnapshot) {
         self.name = ((snapshot.value as? NSDictionary)?["name"] as? String)!
         self.professor = ((snapshot.value as? NSDictionary)?["professor"] as? String)!
         self.time = ((snapshot.value as? NSDictionary)?["timeOrPeriod"] as? String)!
         self.UID = ((snapshot.value as? NSDictionary)?["UID"] as? String)!
+        self.day = ((snapshot.value as? NSDictionary)?["dayOfWeek"] as? String)!
+    }
+    
+    func toAnyObject() -> [String: AnyObject] {
+        return ["name": name as AnyObject, "professor": professor as AnyObject,"timeOrPeriod": time as AnyObject, "UID": UID as AnyObject, "dayOfWeek": day as AnyObject]
     }
 }
