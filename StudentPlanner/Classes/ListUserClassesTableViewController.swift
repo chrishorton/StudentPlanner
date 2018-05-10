@@ -16,6 +16,7 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
     
     var classes = [StudentClass]()
     let ref = userRef.child("classIDs")
+    var user_school: String = ""
 
     @IBAction func indexChanged(_ sender: Any) {
         setUpTableView()
@@ -31,22 +32,19 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
                         let student_class = StudentClass(snapshot: student_class_snap!)
                         tempClasses.append(student_class)
                     }
-                    self.classes = tempClasses.reversed()
-                    print(self.classes)
+                    self.classes = tempClasses.sorted(by: { $0.name < $1.name })
                     self.tableView.reloadData()
-                } else {
-                    print("nothing done, snap was nil")
                 }
             })
         } else{
-            ref.observeSingleEvent(of: .value) { (snapshot) in
+            globalRef.child("Schools").child(user_school).child("classes").observeSingleEvent(of: .value) { (snapshot) in
                 var temp = [StudentClass]()
                 for child in snapshot.children {
                     let childSnap = child as! DataSnapshot
                     let student_class = StudentClass(snapshot: childSnap)
                     temp.append(student_class)
                 }
-                self.classes = temp
+                self.classes = temp.sorted(by: { $0.name < $1.name })
                 print(self.classes)
                 self.tableView.reloadData()
             }
@@ -66,7 +64,12 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "JoinClassCell", bundle: nil), forCellReuseIdentifier: "joinClassCell")
-        setUpTableView()
+        globalRef.child("users").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (snapshot) in
+            let retrievedUser = UserStruct(snapshot: snapshot)
+            self.user_school = retrievedUser.school
+            self.setUpTableView()
+        }
+        
     }
     
     // MARK: - Table view data source

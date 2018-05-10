@@ -46,18 +46,15 @@ class AddClassViewController: UIViewController {
         classRef = classRef.childByAutoId()
         let key = classRef.key
         userRef = userRef.child(key)
-
         let student_class = StudentClass(name: self.nameField.text!, professor: self.teacherField.text!, UID: key, timeOrPeriod: timeField.text!, dayOfWeek: dayField.text!)
         let any_student_class = student_class.toAnyObject()
+        let newRef = schoolRef.child("classes").child(key)
+        
+        // Set values
+        newRef.setValue(any_student_class)
         classRef.setValue(any_student_class)
         userRef.setValue(any_student_class)
         ref.child("Teachers").child(self.teacherField.text!).child("classes").child(self.nameField.text!).setValue(self.nameField.text!)
-        
-        let newRef = schoolRef.child("classes").child(key)
-        newRef.child("UID").setValue(key)
-        newRef.child("name").setValue(self.nameField.text)
-        newRef.child("professor").setValue(self.teacherField.text)
-        newRef.child("timeOrPeriod").setValue(self.timeField.text)
     }
 
     @IBAction func addClass(_ sender: Any) {
