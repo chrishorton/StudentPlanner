@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import TKSubmitTransition
 
-class SignUpViewController: UITableViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UITableViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
 
 
     @IBOutlet weak var userImageView: UIImageView!
@@ -17,13 +18,42 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var reEnterPasswordField: UITextField!
     @IBOutlet weak var schoolField: UITextField!
+    @IBOutlet weak var btn: TKTransitionSubmitButton!
     
     let networkingService = NetworkingService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return TKFadeInAnimator(transitionDuration: 0.5, startingAlpha: 0.8)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+    
+    @IBAction func loginAction(_ sender: Any) {
+        print("Signing up")
+        let helper = Helpers(btn: btn)
+        helper.didStartYourLoading()
+        signUp()
+    }
+    
+    func didFinishLoading(){
+        btn?.startFinishAnimation(0) {
+            let secondVC = ListTableViewController()
+            secondVC.transitioningDelegate = self
+            self.present(secondVC, animated: true, completion: nil)
+        }
+    }
+
+    func signUp(){
+        let data = UIImageJPEGRepresentation(self.userImageView.image!, 0.8)
+        networkingService.signUp(email: emailField.text!, username: emailField.text!, password: passwordField.text!, school: schoolField.text!, data: data! as NSData)
+        print("SignUpAction")
     }
 
     @IBAction func editPhoto(_ sender: Any) {
@@ -69,9 +99,7 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
     }
     
     @IBAction func SignUpAction(_ sender: Any) {
-        let data = UIImageJPEGRepresentation(self.userImageView.image!, 0.8)
-        networkingService.signUp(email: emailField.text!, username: emailField.text!, password: passwordField.text!, school: schoolField.text!, data: data! as NSData)
-        print("SignUpAction")
+        
     }
     
 

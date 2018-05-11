@@ -63,13 +63,6 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "JoinClassCell", bundle: nil), forCellReuseIdentifier: "joinClassCell")
-        globalRef.child("users").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (snapshot) in
-            let retrievedUser = UserStruct(snapshot: snapshot)
-            self.user_school = retrievedUser.school
-            self.setUpTableView()
-        }
-        
     }
     
     // MARK: - Table view data source
@@ -120,6 +113,16 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
 //            newVC.getCurrentUserInfo()
 //        }
 //    }
+    
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.register(UINib(nibName: "JoinClassCell", bundle: nil), forCellReuseIdentifier: "joinClassCell")
+        globalRef.child("users").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (snapshot) in
+            let retrievedUser = UserStruct(snapshot: snapshot)
+            self.user_school = retrievedUser.school
+            self.setUpTableView()
+        }
+    }
     
     override func viewDidDisappear(_ animated: Bool) {
         globalRef.removeAllObservers()

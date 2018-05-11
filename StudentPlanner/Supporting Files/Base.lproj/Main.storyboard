@@ -212,7 +212,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-0R-KYc">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-0R-KYc" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Sign Up">
@@ -220,6 +220,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="SignUpAction:" destination="3TR-j1-aBg" eventType="touchUpInside" id="0HB-pT-8fe"/>
+                                                        <action selector="loginAction:" destination="3TR-j1-aBg" eventType="touchUpInside" id="ajB-rd-Q2w"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -268,6 +269,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btn" destination="f2d-0R-KYc" id="fie-Yh-v1l"/>
                         <outlet property="emailField" destination="dZW-qQ-a3p" id="QXC-Eg-Ybc"/>
                         <outlet property="passwordField" destination="7cJ-UZ-J2t" id="UZB-y3-GEe"/>
                         <outlet property="reEnterPasswordField" destination="i4c-Qj-ln7" id="mYh-if-hoY"/>
@@ -323,7 +325,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2X-pf-Obh">
-                                            <rect key="frame" x="16" y="43" width="18" height="18"/>
+                                            <rect key="frame" x="16" y="39" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button" image="unchecked"/>
                                             <connections>
@@ -763,10 +765,10 @@
             </objects>
             <point key="canvasLocation" x="374" y="2291"/>
         </scene>
-        <!--Your Classes-->
+        <!--Classes-->
         <scene sceneID="Cdl-Xj-K3D">
             <objects>
-                <tableViewController title="Your Classes" id="ftk-nd-bsg" customClass="ListClassesTableViewController" customModule="StudentPlanner" sceneMemberID="viewController">
+                <tableViewController title="Classes" id="ftk-nd-bsg" customClass="ListClassesTableViewController" customModule="StudentPlanner" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJS-Pm-DOp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -798,7 +800,7 @@
                             <outlet property="delegate" destination="ftk-nd-bsg" id="MYr-YC-cYc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Classes" id="VDg-Pm-G2t">
+                    <navigationItem key="navigationItem" title="Classes" id="VDg-Pm-G2t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="arm-SJ-joQ">
                             <connections>
                                 <segue destination="Oqe-F4-MbS" kind="show" id="NKd-s1-hpk"/>

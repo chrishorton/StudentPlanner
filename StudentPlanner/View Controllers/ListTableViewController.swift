@@ -20,9 +20,20 @@ class ListTableViewController: UITableViewController {
     var storageRef: StorageReference!
     var valueToPass: String = ""
     let networkingServices = NetworkingService()
+
+    
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+        print("Dero")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rc = UIRefreshControl()
+        rc.addTarget(self, action: #selector(self.refresh(refreshControl:)), for: UIControlEvents.valueChanged)
+        tableView.refreshControl = rc
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -163,6 +174,8 @@ class ListTableViewController: UITableViewController {
         
         return cell
     }
+    
+    
     
     @IBAction func didClickCheck(_ sender: Any) {
         
