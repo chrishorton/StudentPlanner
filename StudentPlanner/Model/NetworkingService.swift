@@ -11,10 +11,9 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
-import SystemConfiguration
 
-struct NetworkingService {
-    
+
+class NetworkingService {
     var databaseRef: DatabaseReference! {
         return Database.database().reference()
     }
@@ -52,7 +51,7 @@ struct NetworkingService {
             }
         })
     }
-
+    
     func setUserInfo(user: User!, username: String, password: String, school: String, data: NSData!){
         
         let imagePath = "profileImage\(user.uid)/userPic.jpg"
@@ -102,7 +101,11 @@ struct NetworkingService {
             }
         }
     }
-    
+
+    func setUserInfoIntoSchool(user: User!, username: String, password: String, school: String, data: NSData!){
+        
+    }
+ 
     func signUp(email: String, username: String, password: String, school: String, data: NSData!){
         
         print("creating user")
@@ -114,7 +117,7 @@ struct NetworkingService {
                     
                     if snapshot.hasChild(school) {
                         // Add the student into the school
-                        self.setUserInfo(user: user, username: username, password: password, school: school, data: data)
+                        self.setUserInfoIntoSchool(user: user, username: username, password: password, school: school, data: data)
                         print("Snapshot Children: \(snapshot.children)")
                     } else{
                         // No school exists, create a new one and add student to it
@@ -137,30 +140,6 @@ struct NetworkingService {
     }
     
     
-    func isconnectedToNetwork() -> Bool {
-        
-        var zeroAddress = sockaddr_in()
-        zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
-        zeroAddress.sin_family = sa_family_t(AF_INET)
-        
-        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
-                SCNetworkReachabilityCreateWithAddress(nil, $0)
-            }
-        }) else {
-            return false
-        }
-        
-        var flags: SCNetworkReachabilityFlags = []
-        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
-            return false
-        }
-        
-        let isReachable = flags.contains(.reachable)
-        let needsConnection = flags.contains(.connectionRequired)
-        
-        return (isReachable && !needsConnection)
-    }
     
     
     

@@ -13,7 +13,6 @@ class AssignmentTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var className: UILabel!
     @IBOutlet weak var dueDate: UILabel!
-    @IBOutlet weak var checkBox: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

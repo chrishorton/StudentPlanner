@@ -11,8 +11,6 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 import SwiftyChrono
-import Lightbox
-import ImagePicker
 
 class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -21,7 +19,6 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var assignmentDueDate: UITextField!
     @IBOutlet weak var classPicker: UIPickerView!
     
-    var completeClassInfo: StudentClass?
     var databaseRef = Database.database().reference().child("users")
     var pickerData = [String]()
     
@@ -32,11 +29,15 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
         let newdate = date?.toString(dateFormat: "yyyy-MM-dd HH:mm:ss")
         return newdate!
     }
-    
-    func setObservers(){
-        let classRef = databaseRef.child((Auth.auth().currentUser?.uid)!).child("classIDs")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.classPicker.delegate = self
+        self.classPicker.dataSource = self
         
-        classRef.observeSingleEvent(of: .value) { (snapshot) in
+        // Add users classes to picker
+        let classRef = databaseRef.child((Auth.auth().currentUser?.uid)!).child("classIDs")
+        classRef.observe(.value) { (snapshot) in
             let enumerator = snapshot.children
             if enumerator.nextObject() == nil {
                 print("No classes")
@@ -45,53 +46,36 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
                     print("The \"OK\" alert occured.")
                 }))
                 self.present(alert, animated: true, completion: nil)
+                
             }
-            for child in snapshot.children {
-                let snap = child as? DataSnapshot
-                let _class = StudentClass(snapshot: snap!)
-                self.completeClassInfo = _class
-                self.pickerData.append(_class.name)
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                print("Classes: ")
+                print(rest.key)
+                self.pickerData.append(rest.key)
             }
             print(self.pickerData)
             self.classPicker.reloadAllComponents()
+
         }
+
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.classPicker.delegate = self
-        self.classPicker.dataSource = self
-        setObservers()
-        // Add users classes to picker
-    }
-    
-    @IBAction func takePictureDetail(_ sender: Any) {
-        // For now take a picture and add it to detail view - this could be a pic of the assignment worksheet for now - or in the future a picture of the assignment written, in order to process the text
-        let config = Configuration()
-        config.doneButtonTitle = "Finish"
-        config.noImagesTitle = "Sorry! There are no images here!"
-        config.recordLocation = false
-        config.allowVideoSelection = false
-        
-        let imagePicker = ImagePickerController(configuration: config)
-        imagePicker.delegate = self as? ImagePickerDelegate
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
     
     func handlePickerData() -> String {
         let row = classPicker.selectedRow(inComponent: 0)
+        print("Picker data selected: \(pickerData[row])")
         return pickerData[row]
     }
     
     @IBAction func addAction(_ sender: Any) {
         let databaseRef = Database.database().reference()
-        let classSelected = handlePickerData()
-        let assignmentRef = databaseRef.child("Classes").child((self.completeClassInfo?.UID)!).child("assignments").childByAutoId()
-        let assignment = Assignment(title: assignmentName.text!, className: classSelected, dueDate: processDate(), description: descriptionField.text!, completed: false)
+        let assignmentRef = databaseRef.child("allAssignments").childByAutoId()
+        let currentUser =  Auth.auth().currentUser?.displayName
+        print(currentUser!)
+        
+        let assignment = Assignment(title: assignmentName.text!, className: handlePickerData(), dueDate: processDate(), description: descriptionField.text!)
+        
         assignmentRef.setValue(assignment.toAnyObject())
+        print("Added")
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -112,31 +96,6 @@ class AddViewController: UITableViewController, UIPickerViewDelegate, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        guard images.count > 0 else { return }
-        
-        let lightboxImages = images.map {
-            return LightboxImage(image: $0)
-        }
-        
-        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
-        lightbox.dismissalDelegate = self as! LightboxControllerDismissalDelegate
-        lightbox.pageDelegate = self as! LightboxControllerPageDelegate
-        
-        // Use dynamic background.
-        lightbox.dynamicBackground = true
-        
-        // Present your controller.
-        present(lightbox, animated: true, completion: nil)
-//        imagePicker.present(lightbox, animated: true, completion: nil)
-    }
-    
-    
-    
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        print("Done button pressed")
-        imagePicker.dismiss(animated: true, completion: nil)
-    }
     
 
 }
