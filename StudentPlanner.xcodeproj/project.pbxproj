@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8202930CAEEC01A735A3545D /* Pods_StudentPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAD29F0957EBDEBD41BD66D /* Pods_StudentPlanner.framework */; };
-		831458ED2008A645009E9F76 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831458EC2008A645009E9F76 /* DateExtension.swift */; };
 		8343C8DD1FF85B9400B458DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8DC1FF85B9400B458DF /* AppDelegate.swift */; };
 		8343C8E21FF85B9400B458DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8343C8E01FF85B9400B458DF /* Main.storyboard */; };
 		8343C8E41FF85B9400B458DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8343C8E31FF85B9400B458DF /* Assets.xcassets */; };
@@ -19,22 +18,26 @@
 		8343C8F81FF85E4B00B458DF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8F71FF85E4B00B458DF /* SignUpViewController.swift */; };
 		8343C8FA1FF85E7200B458DF /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8F91FF85E7200B458DF /* ListTableViewController.swift */; };
 		8343C8FC1FF85E8800B458DF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C8FB1FF85E8800B458DF /* AddViewController.swift */; };
-		8343C9011FF8A23D00B458DF /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343C9001FF8A23D00B458DF /* NetworkingService.swift */; };
 		834F40302019AC0B008FD332 /* AssignmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F402F2019AC0B008FD332 /* AssignmentDetailViewController.swift */; };
-		836B9CBD20072F2E001F3B8F /* JoinClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B9CBC20072F2E001F3B8F /* JoinClassViewController.swift */; };
 		839DDA93200487D400A38E7D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA92200487D400A38E7D /* SettingsTableViewController.swift */; };
-		839DDA972004ABB200A38E7D /* ListClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA962004ABB200A38E7D /* ListClassesTableViewController.swift */; };
-		839DDA9920055FD300A38E7D /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9820055FD300A38E7D /* AddClassViewController.swift */; };
 		839DDA9B2005649100A38E7D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9A2005649100A38E7D /* Globals.swift */; };
 		83A6322D1FFC467B0065552F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322C1FFC467B0065552F /* User.swift */; };
 		83A6322F1FFC47CA0065552F /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322E1FFC47CA0065552F /* Assignment.swift */; };
-		83CA25222003E08200DC23A1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA25212003E08200DC23A1 /* Helpers.swift */; };
 		83CA25262003F7CA00DC23A1 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */; };
 		83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA2527200421BB00DC23A1 /* StudentClass.swift */; };
+		83CC673720CA172C0019F1A5 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC673620CA172C0019F1A5 /* NetworkingService.swift */; };
+		83CC673920CA173A0019F1A5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC673820CA173A0019F1A5 /* Helpers.swift */; };
+		83CC673B20CA17500019F1A5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC673A20CA17500019F1A5 /* DateExtension.swift */; };
+		83CC674820CA19970019F1A5 /* ListUserClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC674120CA19960019F1A5 /* ListUserClassesTableViewController.swift */; };
+		83CC674920CA19970019F1A5 /* JoinClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC674220CA19960019F1A5 /* JoinClassTableViewController.swift */; };
+		83CC674A20CA19970019F1A5 /* JoinClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC674320CA19960019F1A5 /* JoinClassViewController.swift */; };
+		83CC674B20CA19970019F1A5 /* AllClassesForSchoolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC674420CA19960019F1A5 /* AllClassesForSchoolTableViewController.swift */; };
+		83CC674C20CA19970019F1A5 /* JoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC674520CA19970019F1A5 /* JoinTableViewCell.swift */; };
+		83CC674D20CA19970019F1A5 /* JoinClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CC674620CA19970019F1A5 /* JoinClassCell.xib */; };
+		83CC674E20CA19970019F1A5 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC674720CA19970019F1A5 /* AddClassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		831458EC2008A645009E9F76 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		8343C8D91FF85B9400B458DF /* StudentPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8343C8DC1FF85B9400B458DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8343C8E11FF85B9400B458DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,18 +50,23 @@
 		8343C8F71FF85E4B00B458DF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8343C8F91FF85E7200B458DF /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		8343C8FB1FF85E8800B458DF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		8343C9001FF8A23D00B458DF /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		834F402F2019AC0B008FD332 /* AssignmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailViewController.swift; sourceTree = "<group>"; };
-		836B9CBC20072F2E001F3B8F /* JoinClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassViewController.swift; sourceTree = "<group>"; };
 		839DDA92200487D400A38E7D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "StudentPlanner/View Controllers/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
-		839DDA962004ABB200A38E7D /* ListClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListClassesTableViewController.swift; sourceTree = "<group>"; };
-		839DDA9820055FD300A38E7D /* AddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		839DDA9A2005649100A38E7D /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		83A6322C1FFC467B0065552F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83A6322E1FFC47CA0065552F /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
-		83CA25212003E08200DC23A1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		83CA2527200421BB00DC23A1 /* StudentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
+		83CC673620CA172C0019F1A5 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkingService.swift; path = "../../../Student Planner Test/StudentPlanner/StudentPlanner/Supporting Files/NetworkingService.swift"; sourceTree = "<group>"; };
+		83CC673820CA173A0019F1A5 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = "../../../Student Planner Test/StudentPlanner/StudentPlanner/Supporting Files/Helpers.swift"; sourceTree = "<group>"; };
+		83CC673A20CA17500019F1A5 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = "../../../Student Planner Test/StudentPlanner/StudentPlanner/Supporting Files/DateExtension.swift"; sourceTree = "<group>"; };
+		83CC674120CA19960019F1A5 /* ListUserClassesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserClassesTableViewController.swift; sourceTree = "<group>"; };
+		83CC674220CA19960019F1A5 /* JoinClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinClassTableViewController.swift; sourceTree = "<group>"; };
+		83CC674320CA19960019F1A5 /* JoinClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinClassViewController.swift; sourceTree = "<group>"; };
+		83CC674420CA19960019F1A5 /* AllClassesForSchoolTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllClassesForSchoolTableViewController.swift; sourceTree = "<group>"; };
+		83CC674520CA19970019F1A5 /* JoinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTableViewCell.swift; sourceTree = "<group>"; };
+		83CC674620CA19970019F1A5 /* JoinClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinClassCell.xib; sourceTree = "<group>"; };
+		83CC674720CA19970019F1A5 /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		84C939D2304091ABAB4D338E /* Pods-StudentPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudentPlanner/Pods-StudentPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		92C466C611EA9BDDC87ACDCE /* Pods-StudentPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudentPlanner/Pods-StudentPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		EBAD29F0957EBDEBD41BD66D /* Pods_StudentPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +113,7 @@
 		8343C8DB1FF85B9400B458DF /* StudentPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				83CC674020CA19890019F1A5 /* Classes */,
 				8343C9021FF8A24800B458DF /* Model */,
 				8343C8E81FF85B9400B458DF /* Info.plist */,
 				8343C8FD1FF85E9600B458DF /* View Controllers */,
@@ -116,6 +125,9 @@
 		8343C8F01FF85DF400B458DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83CC673A20CA17500019F1A5 /* DateExtension.swift */,
+				83CC673820CA173A0019F1A5 /* Helpers.swift */,
+				83CC673620CA172C0019F1A5 /* NetworkingService.swift */,
 				8343C8E01FF85B9400B458DF /* Main.storyboard */,
 				8343C8E31FF85B9400B458DF /* Assets.xcassets */,
 				8343C8E51FF85B9400B458DF /* LaunchScreen.storyboard */,
@@ -128,9 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				834F402F2019AC0B008FD332 /* AssignmentDetailViewController.swift */,
-				836B9CBC20072F2E001F3B8F /* JoinClassViewController.swift */,
-				839DDA962004ABB200A38E7D /* ListClassesTableViewController.swift */,
-				839DDA9820055FD300A38E7D /* AddClassViewController.swift */,
 				839DDA92200487D400A38E7D /* SettingsTableViewController.swift */,
 				8343C8DC1FF85B9400B458DF /* AppDelegate.swift */,
 				83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */,
@@ -147,14 +156,26 @@
 			isa = PBXGroup;
 			children = (
 				839DDA9A2005649100A38E7D /* Globals.swift */,
-				8343C9001FF8A23D00B458DF /* NetworkingService.swift */,
 				83A6322C1FFC467B0065552F /* User.swift */,
 				83A6322E1FFC47CA0065552F /* Assignment.swift */,
-				83CA25212003E08200DC23A1 /* Helpers.swift */,
 				83CA2527200421BB00DC23A1 /* StudentClass.swift */,
-				831458EC2008A645009E9F76 /* DateExtension.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		83CC674020CA19890019F1A5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				83CC674720CA19970019F1A5 /* AddClassViewController.swift */,
+				83CC674420CA19960019F1A5 /* AllClassesForSchoolTableViewController.swift */,
+				83CC674620CA19970019F1A5 /* JoinClassCell.xib */,
+				83CC674220CA19960019F1A5 /* JoinClassTableViewController.swift */,
+				83CC674320CA19960019F1A5 /* JoinClassViewController.swift */,
+				83CC674520CA19970019F1A5 /* JoinTableViewCell.swift */,
+				83CC674120CA19960019F1A5 /* ListUserClassesTableViewController.swift */,
+			);
+			name = Classes;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		C9C6A383791209FCD95ED8A1 /* Pods */ = {
@@ -231,6 +252,7 @@
 				8343C8E71FF85B9400B458DF /* LaunchScreen.storyboard in Resources */,
 				8343C8E41FF85B9400B458DF /* Assets.xcassets in Resources */,
 				8343C8EF1FF85C1A00B458DF /* GoogleService-Info.plist in Resources */,
+				83CC674D20CA19970019F1A5 /* JoinClassCell.xib in Resources */,
 				8343C8E21FF85B9400B458DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,22 +331,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A6322F1FFC47CA0065552F /* Assignment.swift in Sources */,
+				83CC674E20CA19970019F1A5 /* AddClassViewController.swift in Sources */,
+				83CC674C20CA19970019F1A5 /* JoinTableViewCell.swift in Sources */,
+				83CC673B20CA17500019F1A5 /* DateExtension.swift in Sources */,
 				839DDA93200487D400A38E7D /* SettingsTableViewController.swift in Sources */,
 				8343C8F21FF85E0600B458DF /* LoginViewController.swift in Sources */,
+				83CC673920CA173A0019F1A5 /* Helpers.swift in Sources */,
 				83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */,
 				839DDA9B2005649100A38E7D /* Globals.swift in Sources */,
-				831458ED2008A645009E9F76 /* DateExtension.swift in Sources */,
-				836B9CBD20072F2E001F3B8F /* JoinClassViewController.swift in Sources */,
-				839DDA972004ABB200A38E7D /* ListClassesTableViewController.swift in Sources */,
-				839DDA9920055FD300A38E7D /* AddClassViewController.swift in Sources */,
+				83CC674820CA19970019F1A5 /* ListUserClassesTableViewController.swift in Sources */,
 				834F40302019AC0B008FD332 /* AssignmentDetailViewController.swift in Sources */,
 				8343C8DD1FF85B9400B458DF /* AppDelegate.swift in Sources */,
-				83CA25222003E08200DC23A1 /* Helpers.swift in Sources */,
 				8343C8FC1FF85E8800B458DF /* AddViewController.swift in Sources */,
 				8343C8F81FF85E4B00B458DF /* SignUpViewController.swift in Sources */,
+				83CC674B20CA19970019F1A5 /* AllClassesForSchoolTableViewController.swift in Sources */,
+				83CC674920CA19970019F1A5 /* JoinClassTableViewController.swift in Sources */,
+				83CC674A20CA19970019F1A5 /* JoinClassViewController.swift in Sources */,
 				83A6322D1FFC467B0065552F /* User.swift in Sources */,
+				83CC673720CA172C0019F1A5 /* NetworkingService.swift in Sources */,
 				8343C8FA1FF85E7200B458DF /* ListTableViewController.swift in Sources */,
-				8343C9011FF8A23D00B458DF /* NetworkingService.swift in Sources */,
 				8343C8F61FF85E2A00B458DF /* ResetPasswordViewController.swift in Sources */,
 				83CA25262003F7CA00DC23A1 /* AssignmentTableViewCell.swift in Sources */,
 			);

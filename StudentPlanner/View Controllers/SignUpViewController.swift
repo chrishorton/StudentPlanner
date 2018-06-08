@@ -5,12 +5,13 @@
 //  Created by Christopher Horton on 12/30/17.
 //  Copyright © 2017 Christopher Horton. All rights reserved.
 //
+
 import UIKit
 import TKSubmitTransition
 
 class SignUpViewController: UITableViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
-    
-    
+
+
     @IBOutlet weak var userImageView: UIImageView!
     // TODO: complete email endings with SearchTextField
     @IBOutlet weak var emailField: UITextField!
@@ -48,15 +49,15 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
             self.present(secondVC, animated: true, completion: nil)
         }
     }
-    
+
     func signUp(){
         let data = UIImageJPEGRepresentation(self.userImageView.image!, 0.8)
         networkingService.signUp(email: emailField.text!, username: emailField.text!, password: passwordField.text!, school: schoolField.text!, data: data! as NSData)
         print("SignUpAction")
     }
-    
+
     @IBAction func editPhoto(_ sender: Any) {
-        
+
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.allowsEditing = true
@@ -89,7 +90,7 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
         
         
         present(alertController, animated: true, completion: nil)
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,6 +98,11 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func SignUpAction(_ sender: Any) {
+        
+    }
+    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         userImageView.contentMode = .scaleAspectFit
@@ -106,6 +112,6 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {}
-    
-    
+
+
 }

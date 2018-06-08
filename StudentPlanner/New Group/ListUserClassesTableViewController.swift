@@ -2,23 +2,22 @@
 //  ListClassesTableViewController.swift
 //  StudentPlanner
 //
-//  Created by Christopher Horton on 1/8/18.
+//  Created by Christopher Horton on 4/23/18.
 //  Copyright © 2018 Christopher Horton. All rights reserved.
 //
-
 
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
 class ListClassesTableViewController: UITableViewController, CellDelegate {
-    
+
     @IBOutlet weak var segControl: UISegmentedControl!
     
     var classes = [StudentClass]()
     let ref = userRef.child("classIDs")
     var user_school: String = ""
-    
+
     @IBAction func indexChanged(_ sender: Any) {
         setUpTableView()
     }
@@ -70,7 +69,7 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.classes.count
     }
-    
+
     func didTap(_ cell: JoinTableViewCell){
         let indexPath = self.tableView.indexPath(for: cell)
         userRef.child("classIDs").observeSingleEvent(of: .value) { (snapshot) in
@@ -106,16 +105,16 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 135
     }
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier  == "toAllClasses" {
+//            let newVC = AllClassesForSchoolTableViewController()
+//            print("Segue")
+//            newVC.getCurrentUserInfo()
+//        }
+//    }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier  == "toAllClasses" {
-    //            let newVC = AllClassesForSchoolTableViewController()
-    //            print("Segue")
-    //            newVC.getCurrentUserInfo()
-    //        }
-    //    }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "JoinClassCell", bundle: nil), forCellReuseIdentifier: "joinClassCell")
         globalRef.child("users").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (snapshot) in

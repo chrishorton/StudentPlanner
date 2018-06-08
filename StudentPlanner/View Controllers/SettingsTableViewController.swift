@@ -25,5 +25,12 @@ class SettingsTableViewController: UITableViewController {
                 print(error.localizedDescription)
             }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            let destVC = ListClassesTableViewController()
+//            destVC.gatherData()
+//            print("Gathering data")
+//            print("Destination VC CLASSES ARRAY: \(destVC.classes)")
+//    }
 
 }

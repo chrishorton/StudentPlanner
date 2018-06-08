@@ -21,7 +21,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Auth.auth().currentUser)
         if !(Auth.auth().currentUser == nil) {
             
         }
