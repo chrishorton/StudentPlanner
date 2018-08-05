@@ -19,21 +19,21 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>To add assignments with camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To upload your profile picture</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array/>
-	<key>NSCameraUsageDescription</key>
-	<string>To add assignments with camera</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To upload your profile picture</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

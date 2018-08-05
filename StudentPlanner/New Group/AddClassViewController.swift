@@ -43,18 +43,19 @@ class AddClassViewController: UIViewController {
     
     func setData(){
         let schoolRef = globalRef.child("Schools").child(self.school)
-        classRef = classRef.childByAutoId()
-        let key = classRef.key
+        
+        let newClassRef = classRef.childByAutoId()
+        let key = newClassRef.key
         userRef = userRef.child(key)
         let student_class = StudentClass(name: self.nameField.text!, professor: self.teacherField.text!, UID: key, timeOrPeriod: timeField.text!, dayOfWeek: dayField.text!)
         let any_student_class = student_class.toAnyObject()
         let newRef = schoolRef.child("classes").child(key)
-        
         // Set values
         newRef.setValue(any_student_class)
-        classRef.setValue(any_student_class)
+        newClassRef.setValue(any_student_class)
         userRef.setValue(any_student_class)
-        ref.child("Teachers").child(self.teacherField.text!).child("classes").child(self.nameField.text!).setValue(self.nameField.text!)
+        ref.child("Teachers").child(self.teacherField.text!).child("classes").childByAutoId().setValue(self.nameField.text!)
+        self.clearValues()
     }
 
     @IBAction func addClass(_ sender: Any) {
@@ -70,6 +71,13 @@ class AddClassViewController: UIViewController {
         let alertController = UIAlertController(title: "Class Added", message: "You have added this class, you can add more now or go back", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func clearValues(){
+        self.dayField.text = ""
+        self.timeField.text = ""
+        self.nameField.text = ""
+        self.teacherField.text = ""
     }
     
 //    func setUpTextField(){

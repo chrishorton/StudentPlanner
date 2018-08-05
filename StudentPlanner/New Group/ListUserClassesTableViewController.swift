@@ -49,7 +49,6 @@ class ListClassesTableViewController: UITableViewController, CellDelegate {
                 self.tableView.reloadData()
             }
         }
-        
     }
     
     func setUpTableView(){
