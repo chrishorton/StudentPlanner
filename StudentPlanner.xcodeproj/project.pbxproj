@@ -23,6 +23,14 @@
 		839DDA9B2005649100A38E7D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DDA9A2005649100A38E7D /* Globals.swift */; };
 		83A6322D1FFC467B0065552F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322C1FFC467B0065552F /* User.swift */; };
 		83A6322F1FFC47CA0065552F /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6322E1FFC47CA0065552F /* Assignment.swift */; };
+		83BE87B721168F9200B468DF /* ListSchoolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE87B621168F9200B468DF /* ListSchoolTableViewController.swift */; };
+		83BE87BC2116925A00B468DF /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE87BA2116925A00B468DF /* SchoolTableViewCell.swift */; };
+		83BE87BD2116925A00B468DF /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BE87BB2116925A00B468DF /* SchoolTableViewCell.xib */; };
+		83BE87BF21169DF400B468DF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE87BE21169DF400B468DF /* WelcomeViewController.swift */; };
+		83BE87CF2116A52A00B468DF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE87CE2116A52A00B468DF /* OnboardingViewController.swift */; };
+		83BE87D32116AAC500B468DF /* checkbox.gif in Resources */ = {isa = PBXBuildFile; fileRef = 83BE87D22116AAC500B468DF /* checkbox.gif */; };
+		83BE87D52116AC9900B468DF /* Gif+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE87D42116AC9900B468DF /* Gif+Swift.swift */; };
+		83BE87D82117676500B468DF /* chat-question.gif in Resources */ = {isa = PBXBuildFile; fileRef = 83BE87D72117676500B468DF /* chat-question.gif */; };
 		83CA25262003F7CA00DC23A1 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */; };
 		83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA2527200421BB00DC23A1 /* StudentClass.swift */; };
 		83CC673720CA172C0019F1A5 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC673620CA172C0019F1A5 /* NetworkingService.swift */; };
@@ -55,6 +63,15 @@
 		839DDA9A2005649100A38E7D /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		83A6322C1FFC467B0065552F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83A6322E1FFC47CA0065552F /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		83BE87B621168F9200B468DF /* ListSchoolTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSchoolTableViewController.swift; sourceTree = "<group>"; };
+		83BE87BA2116925A00B468DF /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		83BE87BB2116925A00B468DF /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
+		83BE87BE21169DF400B468DF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		83BE87CE2116A52A00B468DF /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		83BE87D22116AAC500B468DF /* checkbox.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = checkbox.gif; sourceTree = "<group>"; };
+		83BE87D42116AC9900B468DF /* Gif+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gif+Swift.swift"; sourceTree = "<group>"; };
+		83BE87D72117676500B468DF /* chat-question.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "chat-question.gif"; path = "../../../../Desktop/chat-question.gif"; sourceTree = "<group>"; };
+		83BE87DA2117676E00B468DF /* chat-question.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "chat-question.gif"; sourceTree = "<group>"; };
 		83CA25252003F7CA00DC23A1 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		83CA2527200421BB00DC23A1 /* StudentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
 		83CC673620CA172C0019F1A5 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkingService.swift; path = "../../../Student Planner Test/StudentPlanner/StudentPlanner/Supporting Files/NetworkingService.swift"; sourceTree = "<group>"; };
@@ -113,6 +130,8 @@
 		8343C8DB1FF85B9400B458DF /* StudentPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				83BE87D42116AC9900B468DF /* Gif+Swift.swift */,
+				83BE87CD2116A51300B468DF /* Onboarding */,
 				83CC674020CA19890019F1A5 /* Classes */,
 				8343C9021FF8A24800B458DF /* Model */,
 				8343C8E81FF85B9400B458DF /* Info.plist */,
@@ -129,6 +148,8 @@
 				83CC673820CA173A0019F1A5 /* Helpers.swift */,
 				83CC673620CA172C0019F1A5 /* NetworkingService.swift */,
 				8343C8E01FF85B9400B458DF /* Main.storyboard */,
+				83BE87D92117676D00B468DF /* GIF */,
+				83BE87D72117676500B468DF /* chat-question.gif */,
 				8343C8E31FF85B9400B458DF /* Assets.xcassets */,
 				8343C8E51FF85B9400B458DF /* LaunchScreen.storyboard */,
 				8343C8EE1FF85C1A00B458DF /* GoogleService-Info.plist */,
@@ -139,6 +160,8 @@
 		8343C8FD1FF85E9600B458DF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				83BE87BE21169DF400B468DF /* WelcomeViewController.swift */,
+				83BE87B621168F9200B468DF /* ListSchoolTableViewController.swift */,
 				834F402F2019AC0B008FD332 /* AssignmentDetailViewController.swift */,
 				839DDA92200487D400A38E7D /* SettingsTableViewController.swift */,
 				8343C8DC1FF85B9400B458DF /* AppDelegate.swift */,
@@ -163,9 +186,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		83BE87CD2116A51300B468DF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				83BE87CE2116A52A00B468DF /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		83BE87D92117676D00B468DF /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				83BE87DA2117676E00B468DF /* chat-question.gif */,
+				83BE87D22116AAC500B468DF /* checkbox.gif */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
 		83CC674020CA19890019F1A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				83BE87BA2116925A00B468DF /* SchoolTableViewCell.swift */,
+				83BE87BB2116925A00B468DF /* SchoolTableViewCell.xib */,
 				83CC674720CA19970019F1A5 /* AddClassViewController.swift */,
 				83CC674420CA19960019F1A5 /* AllClassesForSchoolTableViewController.swift */,
 				83CC674620CA19970019F1A5 /* JoinClassCell.xib */,
@@ -199,7 +241,6 @@
 				8343C8D61FF85B9400B458DF /* Frameworks */,
 				8343C8D71FF85B9400B458DF /* Resources */,
 				EE06C0FF55DDCABE90CE2251 /* [CP] Embed Pods Frameworks */,
-				39D0059972963C440515B94B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8343C8E71FF85B9400B458DF /* LaunchScreen.storyboard in Resources */,
+				83BE87D32116AAC500B468DF /* checkbox.gif in Resources */,
+				83BE87D82117676500B468DF /* chat-question.gif in Resources */,
+				83BE87BD2116925A00B468DF /* SchoolTableViewCell.xib in Resources */,
 				8343C8E41FF85B9400B458DF /* Assets.xcassets in Resources */,
 				8343C8EF1FF85C1A00B458DF /* GoogleService-Info.plist in Resources */,
 				83CC674D20CA19970019F1A5 /* JoinClassCell.xib in Resources */,
@@ -260,21 +304,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39D0059972963C440515B94B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudentPlanner/Pods-StudentPlanner-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6F93210DCA6ED3AAB68C5EFC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,20 +329,32 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StudentPlanner/Pods-StudentPlanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
+				"${BUILT_PRODUCTS_DIR}/Lightbox/Lightbox.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
 				"${BUILT_PRODUCTS_DIR}/TKSubmitTransition/TKSubmitTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lightbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyChrono.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TKSubmitTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -330,23 +371,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BE87B721168F9200B468DF /* ListSchoolTableViewController.swift in Sources */,
 				83A6322F1FFC47CA0065552F /* Assignment.swift in Sources */,
 				83CC674E20CA19970019F1A5 /* AddClassViewController.swift in Sources */,
 				83CC674C20CA19970019F1A5 /* JoinTableViewCell.swift in Sources */,
 				83CC673B20CA17500019F1A5 /* DateExtension.swift in Sources */,
 				839DDA93200487D400A38E7D /* SettingsTableViewController.swift in Sources */,
+				83BE87BF21169DF400B468DF /* WelcomeViewController.swift in Sources */,
 				8343C8F21FF85E0600B458DF /* LoginViewController.swift in Sources */,
+				83BE87BC2116925A00B468DF /* SchoolTableViewCell.swift in Sources */,
 				83CC673920CA173A0019F1A5 /* Helpers.swift in Sources */,
 				83CA2528200421BB00DC23A1 /* StudentClass.swift in Sources */,
 				839DDA9B2005649100A38E7D /* Globals.swift in Sources */,
 				83CC674820CA19970019F1A5 /* ListUserClassesTableViewController.swift in Sources */,
 				834F40302019AC0B008FD332 /* AssignmentDetailViewController.swift in Sources */,
+				83BE87D52116AC9900B468DF /* Gif+Swift.swift in Sources */,
 				8343C8DD1FF85B9400B458DF /* AppDelegate.swift in Sources */,
 				8343C8FC1FF85E8800B458DF /* AddViewController.swift in Sources */,
 				8343C8F81FF85E4B00B458DF /* SignUpViewController.swift in Sources */,
 				83CC674B20CA19970019F1A5 /* AllClassesForSchoolTableViewController.swift in Sources */,
 				83CC674920CA19970019F1A5 /* JoinClassTableViewController.swift in Sources */,
 				83CC674A20CA19970019F1A5 /* JoinClassViewController.swift in Sources */,
+				83BE87CF2116A52A00B468DF /* OnboardingViewController.swift in Sources */,
 				83A6322D1FFC467B0065552F /* User.swift in Sources */,
 				83CC673720CA172C0019F1A5 /* NetworkingService.swift in Sources */,
 				8343C8FA1FF85E7200B458DF /* ListTableViewController.swift in Sources */,

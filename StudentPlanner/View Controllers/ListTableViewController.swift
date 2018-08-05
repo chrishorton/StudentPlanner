@@ -179,7 +179,7 @@ class ListTableViewController: UITableViewController {
     @IBAction func didClickCheck(_ sender: Any) {
         
         guard let cell = (sender as AnyObject).superview??.superview as? AssignmentTableViewCell else {
-            return // or fatalError() or whatever
+            return
         }
         
         let indexPath = self.tableView.indexPath(for: cell)

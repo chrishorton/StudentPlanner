@@ -51,9 +51,15 @@ class SignUpViewController: UITableViewController,UIImagePickerControllerDelegat
     }
 
     func signUp(){
-        let data = UIImageJPEGRepresentation(self.userImageView.image!, 0.8)
-        networkingService.signUp(email: emailField.text!, username: emailField.text!, password: passwordField.text!, school: schoolField.text!, data: data! as NSData)
-        print("SignUpAction")
+        
+        if emailField.text == "" || passwordField.text == "" || schoolField.text == "" {
+            // TODO: Alert user to try again
+        } else {
+            let data = UIImageJPEGRepresentation(self.userImageView.image!, 0.8)
+            networkingService.signUp(email: emailField.text!, username: emailField.text!, password: passwordField.text!, school: schoolField.text!, data: data! as NSData)
+            print("SignUpAction")
+        }
+
     }
 
     @IBAction func editPhoto(_ sender: Any) {
